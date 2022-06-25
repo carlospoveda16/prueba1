@@ -52,7 +52,7 @@
 				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
 				camera.layers.enable( 1 );
 
-				const geometry = new THREE.BoxGeometry( 100, 100, 100 );
+				const geometry = new THREE.BoxGeometry( 400, 400, 400 );
 				geometry.scale( 1, 1, - 1 );
 
 				const textures = getTexturesFromAtlasFile( 'fondo.jpg', 12 );
