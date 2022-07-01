@@ -24,6 +24,7 @@
 					"three": "https://unpkg.com/three@0.138.0/build/three.module.js"
 				}
 			}
+	
 		</script>
 		
 		<script type="module">
@@ -37,6 +38,17 @@
 
 			init();
 			animate();
+			const listener = new THREE.AudioListener();
+			camera.add( listener );
+
+			const sound = new THREE.Audio( listener );
+			const audioLoader = new THREE.AudioLoader();
+			audioLoader.load( 'audio.ogg', function( buffer ) {
+				sound.setBuffer( buffer );
+				sound.setLoop( true );
+				sound.setVolume( 0.5 );
+				sound.play();
+			});
 
 			function init() {
 
